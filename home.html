@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Challenge 1 - Encriptador</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img class="logoImg" src="images/logo.png">
+            <h1 class="tittle">Encriptador de mensaje</h1>
+        </div>
+        <div class="left">
+            <input class="text-input" type="text" name="input-texto" id="inputtexto"
+                placeholder="Ingrese el texto aqui">
+        </div>
+        <div class="right">
+            <img src="images/avatar.png" id="imgDer">
+            <h1 id="texto">Ningún mensaje fue encontrado</h1>
+            <textarea id="texto2">Ingresa el texto.</textarea>
+            <button type="button" id="copiar" onclick="copia()">¡Copiar!</button>
+        </div>
+        <div class="left-button">
+            <button type="button" id="btn-encriptar" onclick="encriptar()">Encriptar</button>
+            <button type="button" id="btn-desencriptar" onclick="desencriptar()">Desencriptar!</button>
+        </div>
+    </div>
+    <footer>
+        <p>Challenge 1 - Encriptador</p>
+        <h2>Desarrollado por: <a href="" target="_blank">Bryan González</a></h2>
+    </footer>
+</body>
+
+</html>
