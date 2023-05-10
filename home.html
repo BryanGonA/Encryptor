@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -11,28 +11,29 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img class="logoImg" src="images/logo.png">
+            <img class="logoImg" src="images/logo.png" alt="logo-alura">
             <h1 class="tittle">Encriptador de mensaje</h1>
         </div>
-        <div class="left">
-            <input class="text-input" type="text" name="input-texto" id="inputtexto"
-                placeholder="Ingrese el texto aqui">
-        </div>
-        <div class="right">
-            <img src="images/avatar.png" id="imgDer">
-            <h1 id="texto">Ningún mensaje fue encontrado</h1>
-            <textarea id="texto2">Ingresa el texto.</textarea>
-            <button type="button" id="copiar" onclick="copia()">¡Copiar!</button>
-        </div>
-        <div class="left-button">
-            <button type="button" id="btn-encriptar" onclick="encriptar()">Encriptar</button>
-            <button type="button" id="btn-desencriptar" onclick="desencriptar()">Desencriptar!</button>
-        </div>
+        <form>
+            <div class="left">
+                <label for="input-texto">Texto a encriptar:</label>
+                <input class="text-input" type="text" name="input-texto" id="input-texto"
+                    placeholder="Ingrese el texto aquí">
+                <button type="button" id="btn-encriptar" onclick="encriptar()">Encriptar</button>
+                <button type="button" id="btn-desencriptar" onclick="desencriptar()">Desencriptar</button>
+            </div>
+            <div class="right">
+                <img src="images/avatar.png" id="imgDer" alt="avatar-img">
+                <h2 id="texto">Ningún mensaje fue encontrado</h2>
+                <textarea id="texto2" placeholder="Ingresa el texto para encriptar o desencriptar"></textarea>
+                <button type="button" id="copiar" onclick="copia()">Copiar</button>
+            </div>
+        </form>
+        <footer>
+            <p>Challenge 1 - Encriptador</p>
+            <h2>Desarrollado por: <a href="" target="_blank">Bryan González</a></h2>
+        </footer>
     </div>
-    <footer>
-        <p>Challenge 1 - Encriptador</p>
-        <h2>Desarrollado por: <a href="" target="_blank">Bryan González</a></h2>
-    </footer>
 </body>
 
 </html>
