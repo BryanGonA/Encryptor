@@ -1,38 +1,72 @@
+const codigosEncriptacion = {
+  "a": "ai",
+  "e": "enter",
+  "i": "imes",
+  "o": "ober",
+  "u": "ufat"
+};
 
-function encriptar() {
-  var texto = document.getElementById("inputtexto").value.toLowerCase();
+const letrasDesencriptacion = {
+  "ai": "a",
+  "enter": "e",
+  "imes": "i",
+  "ober": "o",
+  "ufat": "u"
+};
 
-  var txtcifrado = texto.replace(/e/igm,"enter");
-  var txtcifrado = txtcifrado.replace(/o/igm,"ober");
-  var txtcifrado = txtcifrado.replace(/i/igm,"imes");
-  var txtcifrado = txtcifrado.replace(/a/igm,"ai");
-  var txtcifrado = txtcifrado.replace(/u/igm,"ufat");
-  document.getElementById("imgDer").style.display = "none";
-  document.getElementById("texto").style.display = "none";
-  document.getElementById("copiar").style.display = "show";
-  document.getElementById("texto2").innerHTML = txtcifrado;
-  document.getElementById("inputtexto").innerHTML = " ";
-  document.getElementById("copiar").style.display = "inherit";
-}
+const validarMensaje = (mensaje) => {
+  const caracteresProhibidos = /[A-Zá-ú]/g;
+  if (mensaje === "" || caracteresProhibidos.test(mensaje) || mensaje.trim().length === 0) {
+    alert("Por favor, ingrese un mensaje en minúsculas y sin acentos");
+    return false;
+  }
+  return true;
+};
 
-function desencriptar() {
-  var texto = document.getElementById("inputtexto").value.toLowerCase();
-  var txtcifrado = texto.replace(/enter/igm,"e");
-  var txtcifrado = txtcifrado.replace(/ober/igm,"o");
-  var txtcifrado = txtcifrado.replace(/imes/igm,"i");
-  var txtcifrado = txtcifrado.replace(/ai/igm,"a");
-  var txtcifrado = txtcifrado.replace(/ufat/igm,"u");
-  document.getElementById("imgDer").style.display = "none";
-  document.getElementById("texto").style.display = "none";
-  document.getElementById("copiar").style.display = "show";
-  document.getElementById("texto2").innerHTML = txtcifrado;
-  document.getElementById("inputtexto").innerHTML = " ";
-  document.getElementById("copiar").style.display = "inherit";
-}
+const refresh = () => {
+  const elementos = ["#vacio", "#imagenSinMensaje", "#sinMensaje", "#descpripcionSinMensaje"];
+  elementos.forEach((elemento) => {
+    document.querySelector(elemento).style.display = "none";
+  });
+  document.querySelector("#resultado").style.display = "inline-block";
+  document.querySelector("#copiar").style.display = "inline-block";
+};
 
-function copia() {
-  var contenido = document.querySelector("#texto2");
-  contenido.select();
-  document.execCommand('copy');
-  alert("¡Tu texto ha sido copiado!");
-}
+const encriptar = () => {
+  const mensaje = document.querySelector("#texto").value;
+  if (validarMensaje(mensaje)) {
+    const message = mensaje.replace(/[aeiou]/g, (match) => codigosEncriptacion[match]);
+    refresh();
+    show(message);
+    document.querySelector("#texto").value = "";
+  }
+};
+
+const desencriptar = () => {
+  const mensaje = document.querySelector("#texto").value;
+  if (validarMensaje(mensaje)) {
+    const message = mensaje.replaceAll(/ai|enter|imes|ober|ufat/g, (match) => letrasDesencriptacion[match]);
+    refresh();
+    show(message);
+    document.querySelector("#texto").value = "";
+  }
+};
+
+const copiar = () => {
+  const texto = document.querySelector("#resultado");
+  texto.select();
+  texto.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(texto.value);
+};
+
+const show = (mensaje) => {
+  document.querySelector("#resultado").innerHTML = mensaje;
+};
+
+const encrypter = document.querySelector("#encrypter");
+const decrypter = document.querySelector("#decrypter");
+const copia = document.querySelector("#copia");
+
+copia.onclick = copiar;
+encrypter.onclick = encriptar;
+decrypter.onclick = desencriptar;

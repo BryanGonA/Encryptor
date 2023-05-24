@@ -1,143 +1,238 @@
-body {
-    margin: 0px;
-    padding: 0px;
-    background: #F3F5FC;
+body{
+    background-color: #E5E5E5;
+    font-family: 'inter';
+    transition: 1s;
+}
+header :focus{
+    outline-style: none;
+}
+.logo{
+    content: var(--logo);
+    margin-top: 40px;
+    margin-left: 40px;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-.container {
-    margin: auto;
-    width: "100%";
-    height: 650px;
-    padding: 5px;
-}
-
-.text-input {
-    float: left;
-    margin-left: 10%;
-    margin-top: 10%;
-    color: #0A3871;
-    width: 80%;
-    height: 60%;
-    background: #F3F5FC;
-    outline: none;
-    border: none;
-    font-size: 20px;
-}
-
-.left {
-    float: left;
-    width: 70%;
-    height: 50%;
-    border-radius: 24px;
-}
-
-.left-button {
-    float: left;
-    width: 70%;
-    height: auto;
-    border-radius: 24px;
-}
-
-#btn-encriptar {
-    padding: 24px;
-    width: 30%;
-    height: 60%;
-    background: #0A3871;
-    border-radius: 24px;
-    margin-left: 15%;
-    color: #F3F5FC;
-    
-}
-
-#btn-desencriptar {
-    padding: 24px;
-    width: 30%;
-    height: 60%;
-    background: transparent;
-    border-radius: 24px;
-    margin-left: 10%;
-    text-size-adjust: 20px;
-}
-
-p {
-    margin-left: 5%;
-
-}
-
-.right {
+.astro{
+    background: var(--darkMode);
+    height: 50px;
+    width: 50px;
+    margin: 20px 80px auto;
     float: right;
-    text-align: center;
-    border-radius: 24px;
-    width: 30%;
-    height: 80%;
-    
+    cursor: pointer;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-#imgDer {
-    margin-top: 20%;
+.conteiner{
     width: 90%;
-    height: auto;
-    left: 103px;
-    top: 283px;
+    margin: auto;
 }
 
-#texto #texto2 {
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-#copiar {
-    margin-left: 33%;
-    margin-top: 90%;
-    display: none;
-    padding: 24px;
-    width: 40%;
-    height: 10%;
-    background: #D8DFE8;
-    border-radius: 24px;
-}
-
-.logo {
-    width: 100%;
-    float: left;
-    
-}
-
-.logoImg {
-    margin-top: 1%;
-    float: inherit;
-    margin-left: 5%;
-}
-
-.tittle {
-    float: inherit;
-    margin-left: 15%;
-}
-
-#texto2 {
-    float: left;
-    margin-left: 10%;
-    margin-top: 10%;
-    color: #0A3871;
-    width: 80%;
-    height: 60%;
-    background: #F3F5FC;
-    outline: none;
+.texto{
+    height: 50%;
+    margin: 2% auto 0;
+    display: inline-block;
+    font-size: 32px;
+    color: var(--textAreaColor);
     border: none;
-    font-size: 15px;
+    background-color: var(--backgroundTexto) ;
+    resize: none;
+    transition: 1s;
 }
 
-h3 {
-    text-align: center;
+textarea:focus{
+    outline: none !important;
 }
 
-h2 {
-    text-align: center;
+::placeholder{
+    color: var(--colorPlaceholder);
+    opacity: 0.5;
 }
-
-#imgYt {
+.mensajes{
     float: right;
-    margin-right: 5%;
-    width: 10%;
-    height: 10%;
+    background-color: var(--backgroundMensajes);
+    /*display: inline-block;*/
+    text-align: center;
+    width: 35%;
+    height: 90%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border-radius: 32px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 1s;
+}
+.mensajes img{
+    width: 80%;
+}
+#imagenSinMensaje{
+    visibility: visible;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.mensajes h2{
+    font-size: 24px;
+    font-weight: bold;
+}
+.mensajes p{
+    margin: 2%;
+    font-size: 16px;
+}
+#vacio{
+    padding: 30px 20px;
+}
+#resultado{
+    width: 100%;
+    height: 90%;
+    font-size: 24px;
+    color: grey;
+    text-align: left;
+    visibility: visible;
+    background-color: var(--backgroundMensajes);
+    display: none;
+}
+#sinMensaje{
+    visibility: visible;
+}
+#descripcionSinMensaje{
+    visibility: visible;
+}
+.copia{
+    margin: 2%;
+    width: 40%;
+    padding: 3% 0;
+    font-size: 16px;
+    border: var(--borderState);
+    color: var(--copiarDesencText);
+    background-color: var(--copiarDesencBackground);
+    border-radius: 15px;
+    border-width: thin;
+    border-color: var(--borderBoton);
+    transition: 1s all;
+    cursor: pointer;
+    display: none;
+}
+
+.botones{
+    display: block;
+}
+
+.botones p{
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 1%;
+}
+
+.encrypter{
+    margin: auto;
+    width: 20%;
+    padding: 1% 0;
+    font-size: 16px;
+    color: var(--encriptarText);
+    border: none;
+    background-color: var(--encriptarBackground);
+    border-radius: 15px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+
+.decrypter{
+    margin-left: 2%;
+    width: 20%;
+    padding: 1% 0;
+    font-size: 16px;
+    border: var(--borderState);
+    color: var(--copiarDesencText);
+    background-color: var(--copiarDesencBackground);
+    border-width: thin;
+    border-color: var(--borderBoton);
+    border-radius: 15px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.encrypter:hover, .decrypter:hover, .copia:hover{
+    background-color: var(--hooverColor);
+}
+
+footer{
+    text-align: center;
+    margin: 1%;
+    color: var(--footerColor);
+    transition: 1s;
+}
+
+a{
+    color: var(--footerColor);
+    text-decoration-line: none;
+    transition: 1s;
+}
+
+
+@media screen and (max-width:1024px){
+
+    .logo{
+        margin: 10% auto;
+    }
+
+    .astro{
+        margin: 20px 20px auto;
+    }
+
+    .texto,.botones{
+        display: block;
+        width: 100%;
+        margin: 5% auto;
+    }
+
+    #texto{
+        height: 5em;
+    }
+
+    #resultado{
+        height: 5em;
+    }
+
+    .mensajes{
+        width: 100%;
+        float: none;
+        display: block;
+        margin: auto;
+    }
+
+    .vacio{
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+
+    .encrypter,.decrypter{
+        width: 45%;
+        margin: 2%;
+        padding: 2% 0;
+    }
+
+    .decrypter:hover, .copia:hover{
+        background-color: #D8DFE8;
+    }
+
+    .encrypter:hover{
+        background-color: darkblue;
+    }
+
+    #imagenSinMensaje{
+        display: none;
+    }
 }

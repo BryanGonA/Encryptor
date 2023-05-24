@@ -14,26 +14,38 @@
             <img class="logoImg" src="images/logo.png" alt="logo-alura">
             <h1 class="tittle">Encriptador de mensaje</h1>
         </div>
-        <form>
-            <div class="left">
-                <label for="input-texto">Texto a encriptar:</label>
-                <input class="text-input" type="text" name="input-texto" id="input-texto"
-                    placeholder="Ingrese el texto aquí">
-                <button type="button" id="btn-encriptar" onclick="encriptar()">Encriptar</button>
-                <button type="button" id="btn-desencriptar" onclick="desencriptar()">Desencriptar</button>
+        <main class="conteiner">
+            <textarea name="text" id="texto" class="texto" cols="35" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+
+            <div class="mensajes" id="mensajes">
+
+                <section class="vacio" id="vacio">
+                    <h1><img src="./images/avatar.png" alt="Imágen de mensaje no encontrado" id="imagenSinMensaje"></h1>
+                    <h2 id="sinMensaje">Ningún mensaje fue encontrado</h2>
+                    <p id="descpripcionSinMensaje">Ingresa el texto que desea encriptar o desencriptar</p>
+                </section>
+                
+                <section>
+                    <textarea name="text" id="resultado" class="texto" cols="50" rows="12"></textarea>
+                    <input type="submit" value="Copiar" class="copiar" id="copia">
+                </section>
+                
             </div>
-            <div class="right">
-                <img src="images/avatar.png" id="imgDer" alt="avatar-img">
-                <h2 id="texto">Ningún mensaje fue encontrado</h2>
-                <textarea id="texto2" placeholder="Ingresa el texto para encriptar o desencriptar"></textarea>
-                <button type="button" id="copiar" onclick="copia()">Copiar</button>
-            </div>
-        </form>
-        <footer>
-            <p>Challenge 1 - Encriptador</p>
-            <h2>Desarrollado por: <a href="" target="_blank">Bryan González</a></h2>
-        </footer>
+
+            <section class="botones">
+
+                <p>Solo letras minúsculas y sin acento</p>
+                <input type="submit" value="Encriptar" class="encriptar" id="encrypter">
+                <input type="submit" value="Desencriptar" class="desencriptar" id="decrypter">
+
+            </section>
+        </main>
+        
     </div>
+    <footer>
+        <p>Challenge 1 - Encriptador</p>
+        <h2>Desarrollado por: <a href="https://github.com/BryanGonA" target="_blank" alt="Enlace al sitio web del desarrollador" title="Visita el sitio web del desarrollador">Bryan González</a></h2>
+    </footer>
 </body>
 
 </html>
