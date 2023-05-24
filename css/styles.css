@@ -7,7 +7,6 @@ header :focus{
     outline-style: none;
 }
 .logo{
-    content: var(--logo);
     margin-top: 40px;
     margin-left: 40px;
     -khtml-user-select: none;
@@ -18,7 +17,6 @@ header :focus{
 }
 
 .astro{
-    background: var(--darkMode);
     height: 50px;
     width: 50px;
     margin: 20px 80px auto;
@@ -41,9 +39,8 @@ header :focus{
     margin: 2% auto 0;
     display: inline-block;
     font-size: 32px;
-    color: var(--textAreaColor);
     border: none;
-    background-color: var(--backgroundTexto) ;
+    background-color: transparent ;
     resize: none;
     transition: 1s;
 }
@@ -53,13 +50,10 @@ textarea:focus{
 }
 
 ::placeholder{
-    color: var(--colorPlaceholder);
     opacity: 0.5;
 }
 .mensajes{
     float: right;
-    background-color: var(--backgroundMensajes);
-    /*display: inline-block;*/
     text-align: center;
     width: 35%;
     height: 90%;
@@ -100,7 +94,6 @@ textarea:focus{
     color: grey;
     text-align: left;
     visibility: visible;
-    background-color: var(--backgroundMensajes);
     display: none;
 }
 #sinMensaje{
@@ -114,19 +107,17 @@ textarea:focus{
     width: 40%;
     padding: 3% 0;
     font-size: 16px;
-    border: var(--borderState);
-    color: var(--copiarDesencText);
-    background-color: var(--copiarDesencBackground);
     border-radius: 15px;
     border-width: thin;
-    border-color: var(--borderBoton);
     transition: 1s all;
     cursor: pointer;
     display: none;
+    
 }
 
 .botones{
     display: block;
+    text-align: center;
 }
 
 .botones p{
@@ -140,9 +131,7 @@ textarea:focus{
     width: 20%;
     padding: 1% 0;
     font-size: 16px;
-    color: var(--encriptarText);
     border: none;
-    background-color: var(--encriptarBackground);
     border-radius: 15px;
     transition: 1s all;
     cursor: pointer;
@@ -170,7 +159,7 @@ textarea:focus{
 
 footer{
     text-align: center;
-    margin: 1%;
+    margin: 5%;
     color: var(--footerColor);
     transition: 1s;
 }
