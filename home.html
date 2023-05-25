@@ -12,7 +12,7 @@
     <div class="container">
         <div class="logo">
             <img class="logoImg" src="images/logo.png" alt="logo-alura">
-            <h1 class="tittle">Encriptador de mensaje</h1>
+            <h1 class="title">Encriptador de mensaje</h1>
         </div>
         <main class="conteiner">
             <textarea name="text" id="texto" class="texto" cols="35" rows="10" placeholder="Ingrese el texto aquí"></textarea>
@@ -27,23 +27,21 @@
                 
                 <section>
                     <textarea name="text" id="resultado" class="texto" cols="50" rows="12"></textarea>
-                    <input type="submit" value="Copiar" class="copiar" id="copia">
+                    <button class="copia" id="copiar" onclick="copiar()">Copiar</button>
                 </section>
                 
             </div>
 
             <section class="botones">
-
                 <p>Solo letras minúsculas y sin acento</p>
-                <input type="submit" value="Encriptar" class="encriptar" id="encrypter">
-                <input type="submit" value="Desencriptar" class="desencriptar" id="decrypter">
-
+                <button class="encrypter" id="encriptar" onclick="encriptar()">Encriptar</button>
+                <button class="decrypter" id="desencriptar" onclick="desencriptar()">Desencriptar</button>
             </section>
         </main>
         
     </div>
     <footer>
-        <p>Challenge 1 - Encriptador</p>
+        <p>Challenge 1 - Encriptador/Desencriptador</p>
         <h2>Desarrollado por: <a href="https://github.com/BryanGonA" target="_blank" alt="Enlace al sitio web del desarrollador" title="Visita el sitio web del desarrollador">Bryan González</a></h2>
     </footer>
 </body>
